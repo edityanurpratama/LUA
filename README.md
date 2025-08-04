@@ -29,7 +29,10 @@ Script otomatisasi untuk game Roblox "Grow A Garden" dalam satu file tunggal (OB
 
 ## Contoh Loader
 ```lua
-loadstring(game:HttpGet("https://raw.githubusercontent.com/username/repo/main/GrowAGarden_OBLO_Edcynamodya.lua"))()
+loadstring(game:HttpGet(
+  "https://github.com/edityanurpratama/LUA/raw/main/Edcynamodya.lua"
+))()
+
 ```
 
 ## Distribusi
