@@ -1,49 +1,88 @@
-# Grow A Garden Auto Farmer - OBLO Edition
+# Edcynamodya - Auto Cooking & Collecting Bot
 
-Script otomatisasi untuk game Roblox "Grow A Garden" dalam satu file tunggal (OBLO - One Big Lua Object) oleh Edcynamodya.
+Edcynamodya adalah skrip otomasi untuk game grow a garden di Roblox yang membantu pemain memasak waffle dan mengumpulkan hasil kebun secara otomatis. Dengan antarmuka minimalis dan performa ringan, skrip ini cocok untuk sesi farming panjang tanpa membebani sistem.
 
 ## Fitur Utama
-- Auto Cook Waffle (Coconut + SugarApple)
-- Auto Collect & Submit
-- Bypass Cooking Timer (10s → 0.5s)
-- UI modern Rayfield dengan logo custom
-- Fallback otomatis ke mode konsol jika UI gagal
-- Proteksi anti-error (pcall di semua remote)
-- Konfigurasi dan branding mudah (logo, prefix variabel)
 
-## Cara Penggunaan
-1. Copy seluruh kode dari `GrowAGarden_OBLO_Edcynamodya.lua`
-2. Paste ke executor Roblox (Synapse, KRNL, dll)
-3. Script otomatis memuat UI dan fitur utama
-4. Jika UI gagal, script tetap berjalan di mode konsol
+- 🧇 **Auto Cooking**: Masak waffle secara otomatis dengan resep default
+- 🌱 **Auto Collect**: Kumpulkan hasil kebun dan submit otomatis
+- ⚙️ **Adjustable Delay**: Atur delay antara 0.1-3 detik
+- 💾 **Config Save**: Penyimpanan pengaturan otomatis
+- 📱 **Minimalist UI**: Antarmuka ringan (220x140 piksel)
+- ⚡ **Low Resource**: Tanpa aset eksternal untuk performa optimal
+- 🖥️ **Console Fallback**: Mode konsol jika UI gagal dimuat
 
-## Struktur Kode
+## Instalasi
+
+1. Salin kode di bawah ini
+2. Buka game grow a garden di Roblox
+3. Jalankan melalui executor (KRNL, Synapse, Fluxus dll):
+
 ```lua
--- KONFIGURASI UTAMA
--- IDENTIFIKASI REMOTE
--- RESEP & FUNGSI UTAMA
--- SISTEM BYPASS TIMER
--- SISTEM UI RAYFIELD
--- INISIALISASI SISTEM
+loadstring(game:HttpGet("https://raw.githubusercontent.com/username/repo/main/src/init.lua"))()
 ```
 
-## Contoh Loader
-```lua
-loadstring(game:HttpGet(
-  "https://github.com/edityanurpratama/LUA/raw/main/Edcynamodya.lua"
-))()
+## Penggunaan
 
+### Melalui UI
+1. **Auto Cook Waffle**: Klik toggle untuk mengaktifkan/menonaktifkan
+2. **Auto Collect**: Klik toggle untuk mengaktifkan/menonaktifkan
+3. **Delay**: Geser slider untuk mengatur kecepatan
+
+### Melalui Console (Fallback Mode)
+Jika UI gagal dimuat, gunakan perintah:
+```lua
+_G.Toggle(1)  -- Aktifkan/nonaktifkan Auto Cook
+_G.Toggle(2)  -- Aktifkan/nonaktifkan Auto Collect
 ```
 
-## Distribusi
-- Simpan sebagai file `.lua` tunggal
-- Bagikan via pastebin/github gist
-- Format nama: `GrowAGarden_OBLO_Edcynamodya.lua`
+Cek Output untuk status saat ini:
+```
+[Fallback] Gunakan perintah berikut di console:
+_G.Toggle(1) - AutoCook Waffle
+_G.Toggle(2) - AutoCollect & Submit
+Status saat ini:
+AutoCook: true
+AutoCollect: false
+Delay: 0.5 detik
+```
 
-## Peringatan
-- **Gunakan hanya di private server!**
-- Pastikan punya bahan: 1 Coconut + 1 Sugar Apple per waffle
-- tanggung sendiri
+## Konfigurasi
+
+Pengaturan otomatis disimpan di:
+- Executor: `getgenv().GardenFarmerConfig`
+- Variabel:
+  ```lua
+  {
+      AutoCook = true/false,
+      AutoCollect = true/false,
+      Delay = 0.1-3.0
+  }
+  ```
+
+## Troubleshooting
+
+- **Remote tidak ditemukan**: 
+  - Pastikan Anda di tempat yang benar (kebun/dapur)
+  - Tunggu 5-10 detik setelah injeksi
+- **UI tidak muncul**:
+  - Gunakan mode konsol dengan `_G.Toggle()`
+  - Cek Output untuk pesan error
+- **Fitur tidak bekerja**:
+  - Perbarui game/script
+  - Kurangi delay (0.3-0.5 detik optimal)
+
+## Kontribusi
+
+Laporkan issue atau ajukan fitur di [GitHub Repository](https://github.com/username/repo)
+
+## Lisensi
+
+Proyek ini dilisensikan di bawah [MIT License](LICENSE) - bebas digunakan, modifikasi, dan distribusi.
+
 ---
 
-Dikembangkan oleh Edcynamodya | Versi 2.1 | Agustus 2024
+**Version**: 2.1 Lite  
+**Last Update**: 4 Agustus 2025  
+**Compatibility**: Roblox gag v1.5+  
+**Tested Executors**: KRNL, Synapse X, Fluxus
