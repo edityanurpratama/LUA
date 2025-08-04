@@ -1,4 +1,27 @@
---[[
+
+  Cara Load Script (KRNL/Synapse):
+  1. Pastikan HTTP Requests aktif di executor.
+  2. Gunakan URL raw yang benar:
+     https://raw.githubusercontent.com/edityanurpratama/LUA/main/GrowAGarden_OBLO_Edcynamodya.lua
+
+  Contoh loader:
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/edityanurpratama/LUA/main/GrowAGarden_OBLO_Edcynamodya.lua", true))()
+
+  Debug loader (tangkap error):
+  local ok, err = pcall(function()
+    local raw = game:HttpGet("https://raw.githubusercontent.com/edityanurpratama/LUA/main/GrowAGarden_OBLO_Edcynamodya.lua", true)
+    local fn, loadErr = loadstring(raw)
+    assert(fn, loadErr)
+    fn()
+  end)
+  if not ok then
+    warn("Error load farmer:", err)
+  end
+
+  Catatan:
+  - Jalankan sebagai LocalScript (client), bukan Script server.
+  - Jika logo error, ganti LogoID ke "" (kosong) untuk debug.
+
   OBLO (One Big Lua Object) - Grow A Garden Auto Farmer
   Created by Edcynamodya
   Versi 2.1 - Agustus 2024
@@ -10,7 +33,7 @@ getgenv().Edcynamodya_Config = {
     AutoCollect = false,
     BypassTimer = false,
     Delay = 0.5,
-    LogoID = "rbxassetid://14874019742"  -- Ganti dengan Asset ID Anda
+    LogoID = "rbxassetid://14874019742"  -- Ganti dengan Asset ID Anda, atau kosongkan "" jika debug
 }
 
 -- ================ IDENTIFIKASI REMOTE ================
